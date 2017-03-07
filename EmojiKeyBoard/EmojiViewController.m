@@ -36,7 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     self.tempArr  = [NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -158,6 +157,8 @@
 - (void)emojiViewDelete
 {
     [self.inputViewBar.inputTextView deleteBackward];
+    [self updateTextViewHeight];
+
 //    NSRange range = self.inputViewBar.inputTextView.selectedRange;
 //    NSString *handleText;
 //    NSString *appendText;
@@ -172,7 +173,6 @@
 //    if (handleText.length > 0) {
 //        
 //        [self deleteBackward:handleText appendText:appendText];
-        [self updateTextViewHeight];
 //    }
 
 }

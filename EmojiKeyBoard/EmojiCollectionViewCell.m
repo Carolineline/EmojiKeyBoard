@@ -27,15 +27,6 @@
     [self.emojiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
-    
-//    UIGestureRecognizer *tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
-//    [self addGestureRecognizer:tap];
-    
-}
-
-- (void)action:(UIGestureRecognizer *)tap
-{
-    NSLog(@"ssssss");
 }
 
 - (UILabel *)emojiLabel

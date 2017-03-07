@@ -18,7 +18,6 @@
 
 @property (nonatomic, assign) BOOL isRegistedKeyboardNotif;
 
-//@property (nonatomic, strong) EmojiKeyBoardView *emojiKeyBoardView;
 
 @end
 
@@ -50,8 +49,7 @@
     [self.topView addSubview:self.emojiButton];
     [self.topView addSubview:self.addButton];
     [self.topView addSubview:self.bottomLine];
-//    [self addSubview:self.emojiKeyBoardView];
-    self.topView.backgroundColor = [UIColor yellowColor];
+
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self);
     }];
@@ -62,13 +60,10 @@
     }];
     
     [self.inputTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.top.equalTo(self.topLine.mas_bottom).offset(10);
-//        make.bottom.equalTo(@-10);
         make.left.mas_equalTo(20);
         make.right.equalTo(self.bottomLine.mas_right).offset(-80);
         make.height.equalTo(@(40)).priorityHigh();
-        
     }];
     
     [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,9 +72,6 @@
         make.height.mas_equalTo(1);
         make.bottom.equalTo(self.topView.mas_bottom);
     }];
-
-//    [self.inputTextView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-//    [self.inputTextView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     
     [self.emojiButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.bottomLine.mas_bottom).offset(-10);
@@ -147,10 +139,7 @@
                              
                              CGRect newInputBarFrame = endF;
                              [self mas_updateConstraints:^(MASConstraintMaker *make) {
-                                 
-//                                 make.top.mas_equalTo(newInputBarFrame.origin.y);
                                  make.bottom.mas_equalTo(0);
-//                                 make.height.mas_equalTo(newInputBarFrame.size.height);
                                  make.left.mas_equalTo(0);
                                  make.width.mas_equalTo(WIDTH);
                              }];

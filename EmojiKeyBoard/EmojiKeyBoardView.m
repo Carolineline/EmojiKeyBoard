@@ -31,15 +31,6 @@
 
 - (void)setupConstraints
 {
-//    self.emojiKeyBoardShow = NO;
-//    self.showsVerticalScrollIndicator = NO;
-//    self.showsHorizontalScrollIndicator = NO;
-//    self.pagingEnabled = YES;
-//    self.scrollEnabled = YES;
-//    self.delegate = self;
-//    self.contentSize = CGSizeMake(WIDTH*5, 0);
-//    self.contentOffset = CGPointMake(WIDTH, 0);
-//    self.bounces = NO;
     self.backgroundColor = [UIColor colorWithRed:246%255/256.0 green:246%255/256.0 blue:246%255/256.0 alpha:1];
     
     [self addSubview:self.emojiCollectionView];
