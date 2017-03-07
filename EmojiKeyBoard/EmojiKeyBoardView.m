@@ -68,7 +68,6 @@
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"scrollView.contentOffset.x = %f",scrollView.contentOffset.x);
     NSInteger currentPage = ceilf(scrollView.contentOffset.x / WIDTH);
     self.emojiPageControl.currentPage = currentPage;
 }

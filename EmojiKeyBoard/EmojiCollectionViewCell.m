@@ -33,7 +33,6 @@
 {
     if (!_emojiLabel) {
         _emojiLabel = [[UILabel alloc] init];
-//        _emojiLabel.backgroundColor = [UIColor yellowColor];
         _emojiLabel.textAlignment = 1;
         _emojiLabel.font = [UIFont systemFontOfSize:20];
     }
