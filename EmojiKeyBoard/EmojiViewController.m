@@ -56,16 +56,13 @@
             make.left.mas_equalTo(0);
             make.right.equalTo(self.view.mas_right);
             make.bottom.equalTo(self.view.mas_bottom);
-//            make.height.equalTo(@(60)).priorityLow();
         }];
     }else{
         if (self.inputViewBar.isDefaultKeyboard == NO) {
-//            self.emojiView.hidden = 
             [self.inputViewBar mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(0);
                 make.right.equalTo(self.view.mas_right);
                 make.bottom.equalTo(self.view.mas_bottom);
-//                make.height.equalTo(@(60)).priorityLow();
             }];
         }
     }
@@ -121,34 +118,6 @@
     }
 }
 
-//- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-//{
-////    CGSize sizeThatFitsTextView = [self.inputViewBar.inputTextView sizeThatFits:CGSizeMake((WIDTH - 100), MAXFLOAT)];
-////    
-////    //    CGRect rect = self.frame;
-////    //    CGRect topRect = self.topView.frame;
-////    //
-////    //    CGFloat topH = sizeThatFitsTextView.height + 20;
-////    
-////    if (sizeThatFitsTextView.height <= 40) {
-////        
-////    } else if ( sizeThatFitsTextView.height >= 80 ) {
-////        
-////        
-////        [self.inputViewBar.inputTextView mas_updateConstraints:^(MASConstraintMaker *make) {
-////            make.height.equalTo(@80);
-////        }];
-////        
-////    } else {
-////        [self.inputViewBar.inputTextView mas_updateConstraints:^(MASConstraintMaker *make) {
-////            make.height.offset(sizeThatFitsTextView.height);
-////        }];
-////        
-////    }
-//    [self updateTextViewHeight];
-//    return YES;
-//}
-
 - (void) updateTextViewHeight
 {
     CGSize sizeThatFitsTextView = [self.inputViewBar.inputTextView sizeThatFits:CGSizeMake((WIDTH - 100), MAXFLOAT)];
@@ -188,22 +157,23 @@
 
 - (void)emojiViewDelete
 {
-    NSRange range = self.inputViewBar.inputTextView.selectedRange;
-    NSString *handleText;
-    NSString *appendText;
-    if (range.location == self.inputViewBar.inputTextView.text.length) {
-        handleText = self.inputViewBar.inputTextView.text;
-        appendText = @"";
-    }else {
-        handleText = [self.inputViewBar.inputTextView.text substringToIndex:range.location];
-        appendText = [self.inputViewBar.inputTextView.text substringFromIndex:range.location];
-    }
-    
-    if (handleText.length > 0) {
-        
-        [self deleteBackward:handleText appendText:appendText];
+    [self.inputViewBar.inputTextView deleteBackward];
+//    NSRange range = self.inputViewBar.inputTextView.selectedRange;
+//    NSString *handleText;
+//    NSString *appendText;
+//    if (range.location == self.inputViewBar.inputTextView.text.length) {
+//        handleText = self.inputViewBar.inputTextView.text;
+//        appendText = @"";
+//    }else {
+//        handleText = [self.inputViewBar.inputTextView.text substringToIndex:range.location];
+//        appendText = [self.inputViewBar.inputTextView.text substringFromIndex:range.location];
+//    }
+//    
+//    if (handleText.length > 0) {
+//        
+//        [self deleteBackward:handleText appendText:appendText];
         [self updateTextViewHeight];
-    }
+//    }
 
 }
 

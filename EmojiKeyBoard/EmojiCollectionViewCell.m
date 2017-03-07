@@ -23,6 +23,7 @@
 - (void)setupConstraints{
     [super updateConstraints];
     [self addSubview:self.emojiLabel];
+    
     [self.emojiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];

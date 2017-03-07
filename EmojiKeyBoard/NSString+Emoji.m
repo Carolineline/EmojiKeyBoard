@@ -38,7 +38,7 @@
                             usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
                                 const unichar high = [substring characterAtIndex: 0];
                                 
-                                // Surrogate pair (U+1D000-1F9FF)
+                                // Surrogate pair (U+1D000-1F9FF)  \u1F601-\u1F64F
                                 if (0xD800 <= high && high <= 0xDBFF) {
                                     const unichar low = [substring characterAtIndex: 1];
                                     const int codepoint = ((high - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
@@ -65,12 +65,14 @@
     if (0xd800 <= high && high <= 0xdbff && self.length >= 2) {
         const unichar low = [self characterAtIndex:1];
         const int codepoint = ((high - 0xd800) * 0x400) + (low - 0xdc00) + 0x10000;
-        
-        return (0x1d000 <= codepoint && codepoint <= 0x1f77f);
+        NSLog(@"%d",codepoint);
+        BOOL res = (0x1d000 <= codepoint && codepoint <= 0x1f77f);
+        return res;
         
         // Not surrogate pair (U+2100-27BF)
     } else {
-        return (0x2100 <= high && high <= 0x27bf);
+        BOOL res = (0x2100 <= high && high <= 0x27bf);
+        return res;
     }
 }
 
